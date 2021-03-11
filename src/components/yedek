@@ -1,0 +1,317 @@
+import { Box, Tabs, Tab, Typography, makeStyles } from '@material-ui/core';
+import React, { useState } from 'react';
+
+const SearchInLeftComp = () => {
+
+    function TabPanel(props) {
+        const { children, value, index, ...other } = props;
+
+        return (
+            <div
+                role="tabpanel"
+                hidden={value !== index}
+                id={`vertical-tabpanel-${index}`}
+                aria-labelledby={`vertical-tab-${index}`}
+                {...other}
+            >
+                {value === index && (
+                    <Box p={3}>
+                        <Typography>{children}</Typography>
+                    </Box>
+                )}
+            </div>
+        );
+    }
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            flexGrow: 1,
+            backgroundColor: theme.palette.background.paper,
+            display: 'flex',
+            height: 224,
+        },
+        tabs: {
+            borderRight: `1px solid ${theme.palette.divider}`,
+        },
+    }));
+
+    const classes = useStyles();
+    const [searchSelectedTab, setsearchSelectedTab] = useState(0)
+
+
+    const handleChange = (event, newValue) => {
+        setsearchSelectedTab(newValue);
+    };
+
+    return (
+        <div className={classes.root}>
+            <Tabs
+                orientation="vertical"
+                variant="scrollable"
+                value={searchSelectedTab}
+                onChange={handleChange}
+                aria-label="Vertical tabs example"
+            >
+                <Tab label="Fimler" />
+                <Tab label="Diziler" />
+                <Tab label="Kişiler" />
+            </Tabs>
+            <TabPanel value={searchSelectedTab} index={0}>
+                <div className="denemeClass">
+                    ssss
+                </div>
+            </TabPanel>
+            <TabPanel value={searchSelectedTab} index={1}>
+                Item Two
+            </TabPanel>
+            <TabPanel value={searchSelectedTab} index={2}>
+                Item Three
+            </TabPanel>
+        </div>
+    )
+}
+
+export default SearchInLeftComp;
+
+
+
+
+//////////////////////////////
+
+
+
+        if(subProps?.location?.pathname === "/"){
+            subProps?.history?.push({
+                pathname: '/search',
+                search: searchValue,
+              })
+        }
+        if(subProps?.location?.pathname === "/search"){
+            subProps?.history?.push({
+                search: searchValue,
+              })
+        }
+
+
+        /////////////////
+
+
+        subProps?.history?.push({
+            pathname: '/search',
+            search: searchValue,
+          })
+
+
+
+
+          /////////////////////
+
+
+          import React from 'react';
+import { useCookies } from 'react-cookie'
+import { Link } from 'react-router-dom';
+import img from '../img/logo.png'
+import '../css/NavBar.css';
+
+const NavBar = () => {
+    
+    const [cookie, setCookie, removeCookie] = useCookies()
+
+    return(
+        <div className="navBody">
+            <div></div>
+            <ul>
+                <li><Link to="/"><img src={img} style={{height:"30px", width:"70px"}}/></Link></li>
+                <li><Link to="/Movielist">Movie</Link></li>
+                <li><Link to="/TVshow">TV Show</Link></li>
+                <li><Link to="/People">Kişiler</Link></li>
+                <li><Link>Giriş</Link></li>
+                <li><Link>Kayıt ol</Link></li>
+                <li><button onClick={() => removeCookie('token')}>Çıkış</button></li>
+            </ul>
+        </div>
+    )
+}
+
+export default NavBar;
+
+
+
+/////////////////////////
+
+                        <div className="movieCard" key={movie?.id}>
+                            <div className="cardPic"><img src={`https://www.themoviedb.org/t/p/w1280/${movie?.poster_path}`} height="100%" width="100%"/></div>
+                            <Link to={`/movie/${movie?.id}`} style={{textDecoration: 'none', color: 'black'}}>
+                                <div className="cardInText">
+                                    <h2>{
+                                    movie?.original_title?.substr(0, 28)
+                                    }
+                                    </h2>
+                                    <p>{movie?.overview?.substr(0, 60)}...</p>
+                                    <span>{movie?.vote_average} View</span>
+                                </div>
+                            </Link>
+                        </div>
+
+
+                        ///////////////////////////
+
+
+
+                                                <div className="movieCard" key={seri?.id}>
+                            <div className="cardPic"><img src={`https://www.themoviedb.org/t/p/w1280/${seri?.poster_path}`} height="100%" width="100%"/></div>
+                            <Link to={`/series/${seri?.id}`} style={{textDecoration: 'none', color: 'black'}}>
+                                <div className="cardInText">
+                                    <h2>{
+                                    seri?.original_name?.substr(0, 28)
+                                    }
+                                    </h2>
+                                    <p>{seri?.overview?.substr(0, 60)}...</p>
+                                    <span>{seri?.vote_average} View</span>
+                                </div>
+                            </Link>
+                        </div>
+
+
+            /////////////////////////////////
+
+
+                        <div className="mainInMovieBody" style={{ backgroundImage: `url(https://www.themoviedb.org/t/p/w1280${getTVseries?.backdrop_path})` }}>
+                <div className="inMovieBody">
+                    <div className="posterPath"><img src={`https://www.themoviedb.org/t/p/w1280/${getTVseries?.poster_path}`} height="100%" width="100%" /></div>
+                    <div className="movieDescription">
+                        <div className="movieTitle"><h2>{getTVseries?.name}</h2>
+                            <div className="dateAndGenres">
+                                <p>{getTVseries?.first_air_date}</p> {getTVseries?.genres.map((gen) => {
+                                    return (
+                                        <span style={{ marginRight: "7px" }} key={gen.id}>{gen.name},</span>
+                                    )
+                                })}
+
+
+                            </div>
+                        </div>
+                        <div className="movieScore">
+                            <div className="moviePoint">{getTVseries?.vote_average}</div>
+                            Üye <br /> Puanları
+
+                            </div>
+                        <div className="movieSummary">
+                            <h3>Özet</h3>
+                            <p>{getTVseries?.overview}</p>
+                        </div>
+                        <div className="movieAuthors">
+                            {
+                                getTVseries?.created_by?.map((res) => {
+                                    return (
+                                        <div className="author" key={res.id}>
+                                            <p>{res.name}</p>
+                                            <p>Director</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+////////////////////////////////////////////////////
+
+NavBar
+
+
+import React from 'react';
+import { useCookies } from 'react-cookie'
+import { Link } from 'react-router-dom';
+import SearchInput from './SearchInput';
+import img from '../img/logo.png'
+import '../css/NavBar.css';
+
+const NavBar = () => {
+
+    const [cookie, setCookie, removeCookie] = useCookies()
+
+    return (
+        <div className="navBody">
+            <div>
+                <ul>
+                    <li><Link to="/"><img src={img} style={{ height: "30px", width: "70px" }} /></Link></li>
+                    <li><Link to="/Movielist">Movie</Link></li>
+                    <li><Link to="/TVshow">TV Show</Link></li>
+                    <li><Link to="/People">Kişiler</Link></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><Link>Giriş</Link></li>
+                    <li><Link>Kayıt ol</Link></li>
+                    <li><button onClick={() => removeCookie('token')}>Çıkış</button></li>
+                </ul>
+            </div>
+            
+        </div>
+    )
+}
+
+export default NavBar;
+
+
+
+import React, { useState } from 'react';
+import { useCookies } from 'react-cookie'
+import Data from '../user.json'
+import '../css/NavBar.css'
+
+
+const Login = () => {
+
+    const [cookie, setCookie, removeCookie] = useCookies()
+
+    const [loginForm, setloginForm] = useState({
+        email: "",
+        password: ""
+    })
+    
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        if(loginForm.email === Data.email && loginForm.password === Data.password) {
+           setCookie('token', 'ahadir')
+           setloginForm({
+               email: "",
+               password: ""
+           })
+        }else {
+            setloginForm({
+                email: "",
+                password: ""
+            })
+        }
+    }
+
+    return(
+        <div className="loginBody">
+            <div className="loginInBody">
+            <form onSubmit={handleSubmit}>
+                <input onChange={(e) => setloginForm({...loginForm, email: e.target.value})} 
+                type="text" 
+                placeholder="username"
+                value={loginForm.email}
+                 />
+                <input onChange={(e) => setloginForm({...loginForm, password: e.target.value})}
+                type="password" 
+                placeholder="password"
+                value={loginForm.password}
+                />
+                <button onSubmit={handleSubmit} type="submit">Login</button>
+            </form>
+            </div>
+        </div>
+    )
+}
+
+export default Login;
