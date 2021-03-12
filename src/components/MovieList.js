@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar, buildStyles, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -8,6 +9,7 @@ import '../css/NavBar.css'
 import { getAPI, getTV } from '../actions';
 import Pagenation from './Pagenation';
 import { Grid } from '@material-ui/core';
+import BottomNav from './BottomNav';
 
 const MovieList = (props) => {
     const dispatch = useDispatch()
@@ -22,7 +24,8 @@ const MovieList = (props) => {
     const movies = useSelector((state) => state.movies)
     return (
         <div>
-            <NavBar/>
+            { !isMobile && <NavBar/> }
+            
             <div>
                 <div className="PopFilmText"><h1>Popüler Filmler</h1></div>
                    <div className="movieBody">            
@@ -69,7 +72,7 @@ const MovieList = (props) => {
                <Pagenation passedUrl={passedMovieUrl}/> 
             </Grid>
         
-
+            { isMobile && <BottomNav/>}
         </div>
 
     )

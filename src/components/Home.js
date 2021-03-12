@@ -1,14 +1,18 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import NavBar from './NavBar'
 import '../css/NavBar.css'
 import SearchInput from './SearchInput'
 import PopularTabs from './PopularTabs'
+import BottomNav from './BottomNav';
 
 const Home = () => {
     
     return(
         <div>
-            <NavBar/>
+             {
+                 !isMobile && <NavBar/>
+             }
         <div className="searchBody" style={{ backgroundImage: " url(https://wallpaperaccess.com/full/288727.jpg)", backgroundPosition:"center"}}>
             <div className="searchTextBody">
                 <h1>Hoşgeldiniz.</h1>
@@ -19,6 +23,9 @@ const Home = () => {
             </div>
         </div>
         <PopularTabs/>
+            {
+                isMobile && <BottomNav/>
+            }
         </div>
     )
 }

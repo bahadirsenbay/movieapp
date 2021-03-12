@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import NavBar from './NavBar';
+import BottomNav from './BottomNav'
+import { isMobile } from 'react-device-detect';
 import InterMenu from './InterMenu'
 import { singlePerson } from '../actions';
 
@@ -22,8 +24,7 @@ const InPerson = () => {
     const singlePeople = useSelector((state) => state.singlePeople)
     return (
         <div>
-            <NavBar/>
-            <InterMenu/>
+            { !isMobile && <NavBar/> }
         <div className="inPersonAllBody">
             <div className="inPersonBody">
                 <div className="picAndInfo">
@@ -64,6 +65,7 @@ const InPerson = () => {
                 </div>
             </div>
         </div>
+        { isMobile && <BottomNav/> }
         </div>
     )
 }

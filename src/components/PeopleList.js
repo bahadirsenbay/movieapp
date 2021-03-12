@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { isMobile } from 'react-device-detect';
 import '../css/NavBar.css';
 import NavBar from './NavBar';
+import BottomNav from './BottomNav';
 import Pagenation from './Pagenation';
 import { Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
@@ -20,7 +22,8 @@ const PeopleList = (props) => {
     const people = useSelector((state) => state.people);
     return (
         <div>
-            <NavBar/>
+            { !isMobile && <NavBar/> }
+            
             <div><div className="PopFilmText"><h1>Popüler Oyuncular</h1></div>
             <div className="movieBody">
                 {
@@ -48,8 +51,7 @@ const PeopleList = (props) => {
             >
                 <Pagenation passedUrl={passedMovieUrl} />
             </Grid>
-
-
+            { isMobile && <BottomNav/> }
         </div>
     )
 }

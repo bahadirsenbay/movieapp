@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from './components/NavBar';
 import Login from './components/Login'
 import Home from './components/Home';
 import MovieList from './components/MovieList';
@@ -21,7 +20,6 @@ const App = () => {
                 !cookie.token ? <Login /> :
                     <Switch>
                         <div className="App">
-
                             <Route exact path='/' component={Home} />
                             <Route path='/Movielist' component={MovieList} />
                             <Route path='/TVshow' component={Series} />
@@ -30,7 +28,6 @@ const App = () => {
                             <Route path='/person/:id' component={InPerson} />
                             <Route path="/people" component={PeopleList}/>
                             <Route path='/search' component={SearchPage} />
-
                         </div>
                     </Switch>
             }

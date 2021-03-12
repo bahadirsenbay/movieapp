@@ -396,7 +396,7 @@
   .searchPersonAllBody .searchPersonBody {
     display: flex;
     height: 70px;
-    width: 902px;
+    width: 100%;
     margin-bottom: 15px; }
     .searchPersonAllBody .searchPersonBody .searchPersonPicture {
       height: 70px;
@@ -413,6 +413,13 @@
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
         font-weight: bold;
         font-size: 17px; }
+      .searchPersonAllBody .searchPersonBody .searchPersonText .searchDepartment {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        @media screen and (max-width: 768px) and (min-width: 375px) {
+          .searchPersonAllBody .searchPersonBody .searchPersonText .searchDepartment {
+            display: none; } }
       .searchPersonAllBody .searchPersonBody .searchPersonText p {
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
         font-size: 15px;

@@ -563,7 +563,7 @@ $phone: 375px;
     .searchPersonBody{
         display: flex;
         height: 70px;
-        width: 902px;
+        width: 100%;
         margin-bottom: 15px;
         
         .searchPersonPicture{
@@ -575,6 +575,7 @@ $phone: 375px;
         }
 
         .searchPersonText{
+            
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -584,6 +585,15 @@ $phone: 375px;
                 font-family: $FontFamily;
                 font-weight: bold;
                 font-size: 17px;
+            }
+
+            .searchDepartment{
+                @media screen and (max-width:$tablet) and (min-width: $phone) {
+                    display: none;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             p{

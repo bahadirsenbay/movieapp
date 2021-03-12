@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AlarmIcon from '@material-ui/icons/Alarm';
+import { isMobile } from 'react-device-detect';
+import BottomNav from './BottomNav';
 import NavBar from './NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { singleMovie, leadActor } from '../actions';
@@ -43,8 +45,9 @@ const InMovie = (props) => {
     const getLeadActor = useSelector((state) => state.leadActor)
     return (
         <div>
+            { !isMobile && 
             <NavBar/>
-            <InterMenu />
+            }
             <div className="mainInMovieBody" style={{ backgroundImage: `url(https://www.themoviedb.org/t/p/w1280${getSingle?.backdrop_path})`, maxWidth:"100%", maxHeight:"100%"}}>
                 <div className="inMovieBody">
                     <div className="posterPath"><img src={`https://www.themoviedb.org/t/p/w1280/${getSingle?.poster_path}`} /></div>
@@ -108,7 +111,7 @@ const InMovie = (props) => {
                         </div>
                     </div>
                 </div>
-
+                { isMobile && <BottomNav/> }
             </div>
             <div className="actorContainer">
                 {

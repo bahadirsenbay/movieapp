@@ -137,7 +137,7 @@ const SearchInLeftComp = ({ queryData }) => {
                                     <img src={`https://www.themoviedb.org/t/p/w1280/${person?.profile_path}`} height="100%" width="100%" />}</div>
                                     <div className="searchPersonText">
                                         <h3>{person?.name}</h3>
-                                        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}> 
+                                        <div className="searchDepartment"> 
                                         <span style={{marginRight: "10px"}}>{person.known_for_department}:</span>                                      
                                         {   
                                             person.known_for?.map((known) => {
