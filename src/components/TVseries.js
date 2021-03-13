@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
+import BottomNav from './BottomNav';
 import { CircularProgressbar, buildStyles, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -42,8 +44,7 @@ const TVseries = (props) => {
 
     return (
         <div>
-            <NavBar/>
-            <InterMenu />
+            { !isMobile && <NavBar/>}
             <div className="mainInMovieBody" style={{ backgroundImage: `url(https://www.themoviedb.org/t/p/w1280${getTVseries?.backdrop_path})` }}>
                 <div className="inMovieBody">
                     <div className="posterPath"><img src={`https://www.themoviedb.org/t/p/w1280/${getTVseries?.poster_path}`} height="100%" width="100%" /></div>
@@ -109,6 +110,7 @@ const TVseries = (props) => {
                 </div>
 
             </div>
+            { isMobile && <BottomNav/>}
             <div className="actorContainer">
             {
                 getLeadTvActor?.map((actor) => {

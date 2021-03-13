@@ -21,10 +21,10 @@ const PeopleList = (props) => {
 
     const people = useSelector((state) => state.people);
     return (
-        <div>
+        <div style={ isMobile ? {marginBottom:70} : null}>
             { !isMobile && <NavBar/> }
             
-            <div><div className="PopFilmText"><h1>Popüler Oyuncular</h1></div>
+            <div><div className="PopFilmText"><h1 style={ isMobile ? {display:"flex", justifyContent:"center", padding:"10px 0 0 0"} : null}>Popüler Oyuncular</h1></div>
             <div className="movieBody">
                 {
                     people?.results?.map((person) => {

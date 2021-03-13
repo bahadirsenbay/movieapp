@@ -23,11 +23,11 @@ const MovieList = (props) => {
 
     const movies = useSelector((state) => state.movies)
     return (
-        <div>
+        <div style={ isMobile ? {marginBottom:70} : null}>
             { !isMobile && <NavBar/> }
             
             <div>
-                <div className="PopFilmText"><h1>Popüler Filmler</h1></div>
+                <div className="PopFilmText"><h1 style={ isMobile ? {display:"flex", justifyContent:"center", padding:"10px 0 0 0"} : null}>Popüler Filmler</h1></div>
                    <div className="movieBody">            
             {
                 movies?.results?.map((movie) => {
@@ -54,7 +54,7 @@ const MovieList = (props) => {
                             </div>
                             </div>
                             <div className="cardInText">
-                                <h3>{movie?.original_title}</h3>
+                                <h3>{movie?.original_title?.substr(0,50)}</h3>
                                 <p>{movie?.release_date}</p>
                             </div>
                             </Link>

@@ -23,9 +23,9 @@ const Series = (props) => {
 
     const series = useSelector((state) => state.series)
     return (
-        <div>
+        <div style={ isMobile ? {marginBottom:70} : null}>
             { !isMobile && <NavBar/> }
-            <div><div className="PopFilmText"><h1>Popüler Diziler</h1></div>
+            <div><div className="PopFilmText"><h1 style={ isMobile ? {display:"flex", justifyContent:"center", padding:"10px 0 0 0"} : null}>Popüler Diziler</h1></div>
                    <div className="movieBody">             
             {
                 series?.results?.map((seri) => {
@@ -53,7 +53,7 @@ const Series = (props) => {
                         </div>
                         </div>
                         <div className="cardInText">
-                            <h3>{seri?.original_name}</h3>
+                            <h3>{seri?.original_name?.substr(0,50)}</h3>
                             <p>{seri?.first_air_date}</p>
                         </div>
                         </Link>
