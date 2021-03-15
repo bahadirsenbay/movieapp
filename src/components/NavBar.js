@@ -45,7 +45,8 @@ const NavBar = () => {
             <Button color="inherit"><Link style={{textDecoration:"none", color:"white"}}>Giriş</Link></Button>
             <Button onClick={() => removeCookie('token')} color="inherit"><Link style={{textDecoration:"none", color:"white"}}>Çıkış</Link></Button>
             <IconButton>
-                <AccountCircle/>
+
+                <Link to="MyFavorite" style={{textDecoration:"none", color:"white"}}><AccountCircle/></Link>
             </IconButton>
           </Toolbar>
         </AppBar>

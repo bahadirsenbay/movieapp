@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar, buildStyles, } from 'react-circular-progressbar';
+import { IconButton } from '@material-ui/core';
+import AddToPhotosSharpIcon from '@material-ui/icons/AddToPhotosSharp';
 import 'react-circular-progressbar/dist/styles.css';
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import '../css/NavBar.css'
-import { getAPI, getTV } from '../actions';
+import { getAPI, getLikedMovie  } from '../actions';
 import Pagenation from './Pagenation';
 import { Grid } from '@material-ui/core';
 import BottomNav from './BottomNav';
@@ -20,8 +22,15 @@ const MovieList = (props) => {
             dispatch(getAPI())
     }, [])
 
+    const handleClick = (movie) => {
+        dispatch(getLikedMovie(movie))
+    }
 
     const movies = useSelector((state) => state.movies)
+    const likedMovies = useSelector((state) => state.likedMovie)
+
+    console.log(likedMovies)
+
     return (
         <div style={ isMobile ? {marginBottom:70} : null}>
             { !isMobile && <NavBar/> }
@@ -33,6 +42,12 @@ const MovieList = (props) => {
                 movies?.results?.map((movie) => {
                     return (
                         <div className="movieCard">
+                            <div style={{ position:"absolute", zIndex:1, left:110}}>
+                            <IconButton aria-controls="simple-menu" aria-haspopup="true" 
+                            onClick={()=>handleClick(movie)}>
+                                <AddToPhotosSharpIcon style={{ color: "green" }} />
+                            </IconButton>
+                            </div>
                             <Link to={`/movie/${movie?.id}`}>
                             <div className="picAndProgres">
                             <div className="cardPic"><img src={`https://www.themoviedb.org/t/p/w1280/${movie?.poster_path}`} height="100%" width="100%"/></div>

@@ -54,7 +54,7 @@ const SearchInput = () => {
                         onChange={(e) => setsearchValue(e.target.value)}
                         value={searchValue}
                         />
-                    <Button onClick={handleChange} variant="contained" color="primary" style={{ borderRadius: "0 20px 20px 0" }}>Search</Button>
+                    <Button onClick={handleChange} variant="contained" color="black" style={{ borderRadius: "0 20px 20px 0" }}>Search</Button>
                     </div>
                 </div>
             </form>

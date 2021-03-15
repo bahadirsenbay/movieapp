@@ -36,6 +36,7 @@
   align-items: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
   .movieBody .movieCard {
+    position: relative;
     height: 340px;
     width: 158px;
     border: 1px solid #e3e3e3;
@@ -504,5 +505,54 @@
 
 .searchCompInput {
   margin-bottom: 20px; }
+
+.favoriteCard {
+  height: 340px;
+  width: 170px;
+  margin: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+  .favoriteCard .favoritePic {
+    height: 250px;
+    width: 169px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
+  .favoriteCard .favoriteText {
+    display: flex;
+    flex-direction: column;
+    margin: 10px; }
+    .favoriteCard .favoriteText h3 {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px; }
+    .favoriteCard .favoriteText p {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      opacity: 0.5; }
+
+.favoriteAllBody {
+  display: flex;
+  flex-direction: column; }
+  .favoriteAllBody h1 {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 31px;
+    padding: 11px 0 0 72px; }
+    @media screen and (max-width: 768px) and (min-width: 375px) {
+      .favoriteAllBody h1 {
+        padding: 15px 0 5px 99px; } }
+  .favoriteAllBody .favoriteBody {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
+
+.deleteButton {
+  position: absolute;
+  top: 0;
+  left: 118px;
+  height: 50px;
+  width: 50px; }
 
 /*# sourceMappingURL=NavBar.css.map */

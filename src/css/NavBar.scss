@@ -54,6 +54,7 @@ $phone: 375px;
     font-family: $FontFamily;
 
     .movieCard {
+        position: relative;
         height: 340px;
         width: 158px;
         border: 1px solid #e3e3e3;
@@ -718,4 +719,70 @@ $phone: 375px;
 
 .searchCompInput{
     margin-bottom: 20px;
+}
+
+.favoriteCard {
+    height: 340px;
+    width: 170px;
+    margin:10px;
+    box-shadow: 0 2px 6px rgba(black, 0.15);
+
+    .favoritePic{
+        height: 250px;
+        width: 169px;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .favoriteText {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    
+        
+        h3{
+            font-family: $FontFamily;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        p{
+            font-family: $FontFamily;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    }
+}
+
+.favoriteAllBody{
+    display: flex;
+    flex-direction: column;
+
+
+    h1{
+        @media screen and (max-width:$tablet) and (min-width: $phone) {
+            padding: 15px 0 5px 99px;
+        }
+        font-family: $FontFamily;
+        font-weight: bold;
+        font-size: 31px;
+        padding: 11px 0 0 72px;
+    }
+    
+    .favoriteBody{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.deleteButton {    
+    position: absolute;
+    top: 0;
+    left: 118px;
+    height: 50px;
+    width: 50px;
 }

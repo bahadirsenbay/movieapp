@@ -11,6 +11,7 @@ import PeopleList from './components/PeopleList';
 import InPerson from './components/InPerson';
 import Cookie, { useCookies } from 'react-cookie';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import MyFavorites from './components/MyFavorites';
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
                             <Route path='/person/:id' component={InPerson} />
                             <Route path="/people" component={PeopleList}/>
                             <Route path='/search' component={SearchPage} />
+                            <Route path='/MyFavorite' component={MyFavorites}/>
                         </div>
                     </Switch>
             }

@@ -2,6 +2,7 @@ const initialState = {
     movies: [],
     series: [],
     people: [],
+    likedMovie: [],
     filterMovies: [],
     filterSeries: [],
     filterPeople: [],
@@ -74,6 +75,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filterPeople: action.payload
+            }
+        case 'GET_LIKED_MOVIE' :
+            return {
+                ...state,
+                likedMovie: [...state.likedMovie, action.payload]
+            }
+        case 'DELETE_LIKED_FAV' :
+            return {
+                ...state,
+                likedMovie: state.likedMovie.filter((res) => res.id !== action.payload)
             }
 
         default:
