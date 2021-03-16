@@ -22,7 +22,10 @@ const Pagenation = (props) => {
         dispatch(getPeople(value))
       };
 
-    const {movies, series, people} = useSelector((state) => state)
+    const movies = useSelector((state) => state.movies.movies)
+    const series = useSelector((state) => state.series.series)
+    const people = useSelector((state) => state.people.people)
+
 
     return (
         <div>

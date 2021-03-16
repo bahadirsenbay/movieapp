@@ -1,8 +1,9 @@
 const initialState = {
     people: [],
+    singlePeople: null,
 }
 
-const rootReducer = (state = initialState, action) => {
+const peopleReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case 'GET_PEOPLE_LIST':
@@ -10,10 +11,16 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 people: action.payload
             }
+
+        case 'GET_SINGLE_PEOPLE' :
+            return {
+                ...state,
+                singlePeople: action.payload
+            }
             
         default:
             return state
     }
 }
 
-export default rootReducer;
+export default peopleReducer;

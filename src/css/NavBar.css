@@ -104,15 +104,15 @@
         flex-direction: column;
         max-width: 100%; } }
     .mainInMovieBody .inMovieBody .posterPath {
-      /* @media screen and (max-width:$tablet) and (min-width: $phone) {
-          max-height: 100%;
-          max-width: 100%;
-      } */
       margin-right: 35px;
       height: 517px;
       width: 357px;
       border-radius: 7px;
       overflow: hidden; }
+      @media screen and (max-width: 768px) and (min-width: 375px) {
+        .mainInMovieBody .inMovieBody .posterPath {
+          max-height: 100%;
+          max-width: 100%; } }
       .mainInMovieBody .inMovieBody .posterPath img {
         /* @media screen and (max-width:$tablet) and (min-width: $phone) {
             max-width: 100%;

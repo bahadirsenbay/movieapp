@@ -19,7 +19,7 @@ const PeopleList = (props) => {
         dispatch(getPeople())
     }, [])
 
-    const people = useSelector((state) => state.people);
+    const people = useSelector((state) => state.people.people);
     return (
         <div style={ isMobile ? {marginBottom:70} : null}>
             { !isMobile && <NavBar/> }

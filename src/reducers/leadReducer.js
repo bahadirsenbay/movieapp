@@ -3,7 +3,7 @@ const initialState = {
     leadTvActor: null
 }
 
-const rootReducer = (state = initialState, action) => {
+const leadReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case 'GET_LEAD_ACTOR' :
@@ -23,4 +23,4 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default rootReducer;
+export default leadReducer;

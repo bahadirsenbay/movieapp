@@ -41,8 +41,8 @@ const InMovie = (props) => {
     }, [])
 
     const classes = useStyles();
-    const getSingle = useSelector((state) => state.singleMovie)
-    const getLeadActor = useSelector((state) => state.leadActor)
+    const getSingle = useSelector((state) => state.movies.singleMovie)
+    const getLeadActor = useSelector((state) => state.lead.leadActor)
     return (
         <div>
             { !isMobile && 

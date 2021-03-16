@@ -55,7 +55,8 @@ const PopularTabs = () => {
 
     const dispatch = useDispatch()
 
-    const { movies, series } = useSelector((state) => state)
+    const movies = useSelector((state) => state.movies.movies)
+    const series = useSelector((state) => state.series.series)
 
 
     useEffect(() => {

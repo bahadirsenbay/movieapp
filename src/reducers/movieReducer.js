@@ -21,6 +21,12 @@ const movieReducer = (state = initialState, action) => {
                 ...state,
                 likedMovie: [...state.likedMovie, action.payload]
             }
+        case 'DELETE_LIKED_FAV' :
+            return {
+                ...state,
+                likedMovie: state.likedMovie.filter((res) => res.id !== action.payload)
+            }
+
 
         default:
             return state

@@ -4,7 +4,7 @@ const initialState = {
     leadTvActor: null
 }
 
-const rootReducer = (state = initialState, action) => {
+const seriesReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case 'GET_TV_LIST':
@@ -30,4 +30,4 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default rootReducer;
+export default seriesReducer;

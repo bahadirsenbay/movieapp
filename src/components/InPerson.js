@@ -21,7 +21,7 @@ const InPerson = () => {
         dispatch(singlePerson(personID))
     },[])
 
-    const singlePeople = useSelector((state) => state.singlePeople)
+    const singlePeople = useSelector((state) => state.people.singlePeople)
     return (
         <div>
             { !isMobile && <NavBar/> }

@@ -5,7 +5,7 @@ const initialState = {
 
 }
 
-const rootReducer = (state = initialState, action) => {
+const searchReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case 'GET_SEARCH_MOVIE' :
@@ -30,4 +30,4 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default rootReducer;
+export default searchReducer;

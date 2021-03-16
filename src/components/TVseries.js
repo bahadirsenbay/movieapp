@@ -39,8 +39,8 @@ const TVseries = (props) => {
     }, [])
 
     const classes = useStyles();
-    const getTVseries = useSelector((state) => state.singleTV)
-    const getLeadTvActor = useSelector((state) => state.leadTvActor)
+    const getTVseries = useSelector((state) => state.series.singleTV)
+    const getLeadTvActor = useSelector((state) => state.lead.leadTvActor)
 
     return (
         <div>

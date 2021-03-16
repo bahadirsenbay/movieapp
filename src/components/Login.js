@@ -5,10 +5,12 @@ import Data from '../user.json'
 import { Button, Grid, InputAdornment, TextField } from '@material-ui/core'
 import { AccountCircle, LockRounded } from '@material-ui/icons';
 import '../css/NavBar.css'
+import { useHistory } from 'react-router-dom';
 
 
 const Login = () => {
 
+    const history = useHistory();
     const [cookie, setCookie, removeCookie] = useCookies()
 
     const [loginForm, setloginForm] = useState({
@@ -17,6 +19,7 @@ const Login = () => {
     })
 
     const handleSubmit = (event) => {
+        history.push("/")
         event.preventDefault()
         if (loginForm.email === Data.email && loginForm.password === Data.password) {
             setCookie('token', 'ahadir')

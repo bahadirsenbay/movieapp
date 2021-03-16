@@ -26,10 +26,8 @@ const MovieList = (props) => {
         dispatch(getLikedMovie(movie))
     }
 
-    const movies = useSelector((state) => state.movies)
+    const movies = useSelector((state) => state.movies.movies)
     const likedMovies = useSelector((state) => state.likedMovie)
-
-    console.log(likedMovies)
 
     return (
         <div style={ isMobile ? {marginBottom:70} : null}>

@@ -13,7 +13,8 @@ const MyFavorites = () => {
 
     const dispatch = useDispatch();
 
-    const addToFav = useSelector((state) => state.likedMovie);
+    const addToFav = useSelector((state) => state.liked.likedMovie);
+
 
     const handleClick = (id) => {
         dispatch(deleteFav(id))
@@ -25,7 +26,7 @@ const MyFavorites = () => {
             <h1>Favori Listem</h1>
 
             <div className="favoriteBody">
-            {
+                {
                         addToFav.map((res, index) => {
                             return (
                                     <div className="favoriteCard">
@@ -38,8 +39,8 @@ const MyFavorites = () => {
                                         </div>
                                         </div>
                                         <div className="favoriteText">
-                                            <h3>{res?.original_title.substr(0,50)}</h3>
-                                            <p>{res?.release_date}</p>
+                                            <h3>{res?.original_title?.substr(0,50) ?? res?.original_name?.substr(0,50)}</h3>
+                                            <p>{res?.release_date ?? res?.first_air_date}</p>
                                         </div>
                                     </div>
                             )
