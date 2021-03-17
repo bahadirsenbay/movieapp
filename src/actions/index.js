@@ -85,3 +85,10 @@ export const getLikedMovie = (liked) => dispatch => {
 export const deleteFav = (id) => dispatch => {
     dispatch({type: 'DELETE_LIKED_FAV', payload: id })
 }
+
+export const getPersonCredit = (id) => dispatch => {
+    axios.get('https://api.themoviedb.org/3/person/'+id+'/movie_credits?api_key=357393f7e184680fc18a3790c07e3b01&language=tr-TR')
+    .then((res) => {
+        dispatch({type: 'GET_PERSON_CREDIT', payload: res.data})
+    })
+}

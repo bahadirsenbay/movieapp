@@ -291,6 +291,23 @@ $phone: 375px;
     display: flex;
     padding: 10px;
     overflow-x: auto;
+    
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar{
+        width: 12px;
+        height: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: #032541;
+    }
 
 
     .actorBody {
@@ -412,6 +429,23 @@ $phone: 375px;
     height: 350px;
     overflow-x: auto;
     overflow-y: hidden;
+
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar{
+        width: 12px;
+        height: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: #032541;
+    }
     
     
     .tabBody{
@@ -613,6 +647,7 @@ $phone: 375px;
     }
     display: flex;
     padding: 25px;
+    max-width: 73%;
 
     .inPersonBody{
         @media screen and (max-width:$tablet) and (min-width: $phone) {
@@ -690,6 +725,15 @@ $phone: 375px;
                     font-family: $FontFamily;
                     font-weight: bold;
                     font-size: 30px;
+                }
+
+                .creditsInfo{
+                    h1{
+                        font-family: $FontFamily;
+                        font-size: 25px;
+                        font-weight: bold;
+                        margin-top: 20px;
+                    }
                 }
 
                 .inBiography{
@@ -785,4 +829,64 @@ $phone: 375px;
     left: 118px;
     height: 50px;
     width: 50px;
+}
+
+.creditsBody{
+    display: flex;
+    height: 280px;
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar{
+        width: 12px;
+        height: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: #032541;
+    }
+
+}
+
+.creditsCard{
+    height: 250px;
+    width: 135px;
+    margin-right: 15px;
+    box-shadow: 0 2px 6px rgba(black, 0.15);
+
+    .creditsPic{
+        height: 185px;
+        width: 135px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        overflow:hidden;
+    }
+
+    .creditsText {
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+
+        h3{
+            font-family: $FontFamily;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        p{
+            font-family: $FontFamily;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+    }
 }

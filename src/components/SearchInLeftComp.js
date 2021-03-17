@@ -59,7 +59,10 @@ const SearchInLeftComp = ({ queryData }) => {
 
     const dispatch = useDispatch()
 
-    const { filterMovies, filterSeries, filterPeople } = useSelector((state) => state)
+    const filterMovies = useSelector((state) => state.search.filterMovies)
+    const filterSeries = useSelector((state) => state.search.filterSeries)
+    const filterPeople = useSelector((state) => state.search.filterPeople)
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -96,6 +99,7 @@ const SearchInLeftComp = ({ queryData }) => {
                     className={classes.vertical}
                     orientation="vertical"
                     variant="scrollable"
+                    indicatorColor="primary"
                     value={searchSelectedTab}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"

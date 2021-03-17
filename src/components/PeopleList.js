@@ -32,7 +32,7 @@ const PeopleList = (props) => {
                             <div className="movieCard">
                                 <Link to={`/person/${person.id}`}>
                                     <div className="picAndProgres">
-                                        <div className="cardPic"><img src={`https://www.themoviedb.org/t/p/w1280/${person?.profile_path}`} height="100%" width="100%" /></div>
+                                        <div className="cardPic">{ person?.profile_path === null ? <img src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg" height="100%" width="100%" /> : <img src={`https://www.themoviedb.org/t/p/w1280/${person?.profile_path}`} height="100%" width="100%" />}</div>
                                     </div>
                                     <div className="cardInText">
                                         <h3>{person?.name}</h3>

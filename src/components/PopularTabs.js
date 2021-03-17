@@ -81,7 +81,7 @@ const PopularTabs = () => {
             <div className="tableBodyStyle">
                 <p>Popüler Olanlar</p>
                 <div>
-                    <Tabs className={classes.tab} value={selectedTab} onChange={handleChange} >
+                    <Tabs className={classes.tab} value={selectedTab} indicatorColor="primary" onChange={handleChange} >
                         <Tab label="Televizyonda" />
                         <Tab label="Kiralık" />
                         <Tab label="Sinemalarda" />

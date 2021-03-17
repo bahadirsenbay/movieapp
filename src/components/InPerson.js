@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import NavBar from './NavBar';
 import BottomNav from './BottomNav'
 import { isMobile } from 'react-device-detect';
-import InterMenu from './InterMenu'
-import { singlePerson } from '../actions';
+import PeopleCredits from './PeopleCredits';
+import { getPersonCredit, singlePerson } from '../actions';
 
 import '../css/NavBar.css';
 
@@ -19,11 +19,13 @@ const InPerson = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(singlePerson(personID))
+        dispatch(getPersonCredit(personID))
     },[])
 
     const singlePeople = useSelector((state) => state.people.singlePeople)
+    const peopleCredit = useSelector((state) => state.people.personCredits)
     return (
-        <div>
+        <div style={ isMobile ? {marginBottom:110} : null}>
             { !isMobile && <NavBar/> }
         <div className="inPersonAllBody">
             <div className="inPersonBody">
@@ -59,6 +61,16 @@ const InPerson = () => {
                         <div className="inBiography">
                             <h3>Biyografi</h3>
                             <p>{singlePeople?.biography.length === 0 ? "Bu kişi hakkında biyografi bulunamadı" : singlePeople?.biography}</p>
+                        </div>
+                        <div className="creditsInfo"><h1>Oynadığı Filmler</h1></div>
+                        <div className="creditsBody">
+                            {
+                                peopleCredit?.cast?.map((credit) => {
+                                    return(
+                                        <PeopleCredits name={credit?.original_title} realese={credit?.release_date} picture={credit?.poster_path}/>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
 

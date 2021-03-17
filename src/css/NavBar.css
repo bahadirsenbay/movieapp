@@ -208,6 +208,16 @@
   display: flex;
   padding: 10px;
   overflow-x: auto; }
+  .actorContainer::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5; }
+  .actorContainer::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+    background-color: #F5F5F5; }
+  .actorContainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #032541; }
   .actorContainer .actorBody {
     height: 255px;
     width: 140px;
@@ -288,6 +298,16 @@
   height: 350px;
   overflow-x: auto;
   overflow-y: hidden; }
+  .cardTabBody::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5; }
+  .cardTabBody::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+    background-color: #F5F5F5; }
+  .cardTabBody::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #032541; }
   .cardTabBody .tabBody {
     height: 291px;
     width: 150px;
@@ -428,7 +448,8 @@
 
 .inPersonAllBody {
   display: flex;
-  padding: 25px; }
+  padding: 25px;
+  max-width: 73%; }
   @media screen and (max-width: 768px) and (min-width: 375px) {
     .inPersonAllBody {
       flex-direction: column;
@@ -489,6 +510,11 @@
           font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
           font-weight: bold;
           font-size: 30px; }
+        .inPersonAllBody .inPersonBody .personBiography .inAllBiography .creditsInfo h1 {
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          font-size: 25px;
+          font-weight: bold;
+          margin-top: 20px; }
         .inPersonAllBody .inPersonBody .personBiography .inAllBiography .inBiography {
           margin-top: 30px; }
           @media screen and (max-width: 768px) and (min-width: 375px) {
@@ -554,5 +580,48 @@
   left: 118px;
   height: 50px;
   width: 50px; }
+
+.creditsBody {
+  display: flex;
+  height: 280px;
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+  overflow-y: hidden; }
+  .creditsBody::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5; }
+  .creditsBody::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+    background-color: #F5F5F5; }
+  .creditsBody::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #032541; }
+
+.creditsCard {
+  height: 250px;
+  width: 135px;
+  margin-right: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+  .creditsCard .creditsPic {
+    height: 185px;
+    width: 135px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    overflow: hidden; }
+  .creditsCard .creditsText {
+    display: flex;
+    flex-direction: column;
+    padding: 4px; }
+    .creditsCard .creditsText h3 {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px; }
+    .creditsCard .creditsText p {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 13px;
+      opacity: 0.5; }
 
 /*# sourceMappingURL=NavBar.css.map */
